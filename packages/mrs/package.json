@@ -1,5 +1,5 @@
 {
-  "name": "my-react-scripts",
+  "name": "merrily-react-scripts",
   "version": "0.0.7",
   "bin": {
     "mrs": "./bin/mrs",
@@ -129,5 +129,5 @@
       "react-app"
     ]
   },
-  "gitHead": "735ca7313bf8fe570ae524df88484f093f5a1f33"
+  "gitHead": "67539740973e917e253e96adcd95dd8ba9b25d14"
 }
