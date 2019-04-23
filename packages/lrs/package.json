@@ -1,6 +1,6 @@
 {
   "name": "reactscripts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "bin": {
     "reactscripts": "./bin/mrs",
     "reactscripts-start": "./bin/mrs-start",
