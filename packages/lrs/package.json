@@ -1,7 +1,6 @@
 {
   "name": "lrs",
   "version": "0.0.5",
-  "private": true,
   "bin": {
     "mrs": "./bin/mrs",
     "mrs-start": "./bin/mrs-start",
