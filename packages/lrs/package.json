@@ -1,10 +1,10 @@
 {
-  "name": "lrs",
+  "name": "reactscripts",
   "version": "0.0.6",
   "bin": {
-    "lrs": "./bin/mrs",
-    "lrs-start": "./bin/mrs-start",
-    "lrs-build": "./bin/mrs-build"
+    "reactscripts": "./bin/mrs",
+    "reactscripts-start": "./bin/mrs-start",
+    "reactscripts-build": "./bin/mrs-build"
   },
   "dependencies": {
     "@babel/core": "7.2.2",
@@ -128,5 +128,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "gitHead": "735ca7313bf8fe570ae524df88484f093f5a1f33"
 }
