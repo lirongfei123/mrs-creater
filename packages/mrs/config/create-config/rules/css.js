@@ -1,6 +1,7 @@
 const paths = require('../../paths');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const safePostCssParser = require('postcss-safe-parser');
 const getStyleLoaders = (cssOptions, preProcessor, config) => {
     const loaders = [
         config.isEnvDevelopment && require.resolve('style-loader'),
@@ -42,6 +43,7 @@ const getStyleLoaders = (cssOptions, preProcessor, config) => {
             loader: require.resolve(preProcessor),
             options: {
                 sourceMap: config.isEnvProduction && config.shouldUseSourceMap,
+                javascriptEnabled: true
             },
         });
     }
@@ -52,6 +54,7 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessModuleRegex = /\.module\.less$/;
 module.exports = function (ruleHooks) {
     ruleHooks.for('css').tapAsync('css23', function(rules, config, callback) {
         callback(null, rules.concat({
@@ -109,6 +112,21 @@ module.exports = function (ruleHooks) {
                     getLocalIdent: getCSSModuleLocalIdent,
                 },
                 'sass-loader',
+                config
+            ),
+        }));
+    });
+    ruleHooks.for('css').tapAsync('cssLessModule', function(rules, config, callback) {
+        callback(null, rules.concat({
+            test: lessModuleRegex,
+            use: getStyleLoaders(
+                {
+                    importLoaders: 2,
+                    sourceMap: config.isEnvProduction && config.shouldUseSourceMap,
+                    modules: true,
+                    getLocalIdent: getCSSModuleLocalIdent,
+                },
+                'less-loader',
                 config
             ),
         }));
