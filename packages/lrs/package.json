@@ -2,9 +2,9 @@
   "name": "lrs",
   "version": "0.0.5",
   "bin": {
-    "mrs": "./bin/mrs",
-    "mrs-start": "./bin/mrs-start",
-    "mrs-build": "./bin/mrs-build"
+    "lrs": "./bin/mrs",
+    "lrs-start": "./bin/mrs-start",
+    "lrs-build": "./bin/mrs-build"
   },
   "dependencies": {
     "@babel/core": "7.2.2",
