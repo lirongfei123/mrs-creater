@@ -1,10 +1,10 @@
 {
-  "name": "reactscripts",
-  "version": "0.0.7",
+  "name": "my-react-scripts",
+  "version": "0.0.6",
   "bin": {
-    "reactscripts": "./bin/mrs",
-    "reactscripts-start": "./bin/mrs-start",
-    "reactscripts-build": "./bin/mrs-build"
+    "mrs": "./bin/mrs",
+    "mrs-start": "./bin/mrs-start",
+    "mrs-build": "./bin/mrs-build"
   },
   "dependencies": {
     "@babel/core": "7.2.2",
