@@ -1,0 +1,188 @@
+0 silly argv { _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.4.3',
+0 silly argv   '$0': 'C:\\Users\\liron\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js' }
+1 notice cli v3.4.3
+2 verbose rootPath d:\mycode\mrs-creater
+3 info versioning independent
+4 info Verifying npm credentials
+5 http fetch GET 200 https://registry.npmjs.org/-/whoami 1206ms
+6 silly npm whoami received {"username":"khan123"}
+7 silly argv { _: [ 'publish' ],
+7 silly argv   composed: 'publish',
+7 silly argv   lernaVersion: '3.4.3',
+7 silly argv   '$0': 'C:\\Users\\liron\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js' }
+8 verbose rootPath d:\mycode\mrs-creater
+9 silly isAnythingCommitted
+10 verbose isAnythingCommitted 1
+11 silly currentBranch
+12 verbose currentBranch master
+13 silly isBehindUpstream
+14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
+15 silly hasTags
+16 verbose hasTags true
+17 silly git-describe.sync "merrily-react-scripts@0.0.8-1-gfdc7995" => {"lastTagName":"merrily-react-scripts@0.0.8","lastVersion":"0.0.8","refCount":"1","sha":"fdc7995","isDirty":false}
+18 info Looking for changed packages since merrily-react-scripts@0.0.8
+19 silly diffSinceIn merrily-react-scripts@0.0.8 packages/mrs
+20 silly diff packages/mrs/config/webpack.config.js
+20 silly diff packages/mrs/package.json
+21 verbose updated merrily-react-scripts
+22 verbose git-describe undefined => "merrily-react-scripts@0.0.8-1-gfdc7995"
+23 silly git-describe parsed => {"lastTagName":"merrily-react-scripts@0.0.8","lastVersion":"0.0.8","refCount":"1","sha":"fdc7995","isDirty":false}
+24 silly batched [ PackageGraphNode {
+24 silly batched     name: 'merrily-react-scripts',
+24 silly batched     externalDependencies:
+24 silly batched      Map {
+24 silly batched        '@babel/core' => [Object],
+24 silly batched        '@svgr/webpack' => [Object],
+24 silly batched        '@types/jest' => [Object],
+24 silly batched        '@types/node' => [Object],
+24 silly batched        '@types/react' => [Object],
+24 silly batched        '@types/react-dom' => [Object],
+24 silly batched        'async' => [Object],
+24 silly batched        'babel-core' => [Object],
+24 silly batched        'babel-eslint' => [Object],
+24 silly batched        'babel-jest' => [Object],
+24 silly batched        'babel-loader' => [Object],
+24 silly batched        'babel-plugin-named-asset-import' => [Object],
+24 silly batched        'babel-preset-react-app' => [Object],
+24 silly batched        'bfj' => [Object],
+24 silly batched        'case-sensitive-paths-webpack-plugin' => [Object],
+24 silly batched        'chalk' => [Object],
+24 silly batched        'commander' => [Object],
+24 silly batched        'css-loader' => [Object],
+24 silly batched        'dotenv' => [Object],
+24 silly batched        'dotenv-expand' => [Object],
+24 silly batched        'eslint' => [Object],
+24 silly batched        'eslint-config-react-app' => [Object],
+24 silly batched        'eslint-loader' => [Object],
+24 silly batched        'eslint-plugin-flowtype' => [Object],
+24 silly batched        'eslint-plugin-import' => [Object],
+24 silly batched        'eslint-plugin-jsx-a11y' => [Object],
+24 silly batched        'eslint-plugin-react' => [Object],
+24 silly batched        'file-loader' => [Object],
+24 silly batched        'fs-extra' => [Object],
+24 silly batched        'html-webpack-plugin' => [Object],
+24 silly batched        'identity-obj-proxy' => [Object],
+24 silly batched        'jest' => [Object],
+24 silly batched        'jest-pnp-resolver' => [Object],
+24 silly batched        'jest-resolve' => [Object],
+24 silly batched        'jest-watch-typeahead' => [Object],
+24 silly batched        'less' => [Object],
+24 silly batched        'less-loader' => [Object],
+24 silly batched        'mini-css-extract-plugin' => [Object],
+24 silly batched        'node-sass' => [Object],
+24 silly batched        'npm-updater' => [Object],
+24 silly batched        'optimize-css-assets-webpack-plugin' => [Object],
+24 silly batched        'pnp-webpack-plugin' => [Object],
+24 silly batched        'postcss-flexbugs-fixes' => [Object],
+24 silly batched        'postcss-loader' => [Object],
+24 silly batched        'postcss-preset-env' => [Object],
+24 silly batched        'postcss-safe-parser' => [Object],
+24 silly batched        'react' => [Object],
+24 silly batched        'react-app-polyfill' => [Object],
+24 silly batched        'react-dev-utils' => [Object],
+24 silly batched        'react-dom' => [Object],
+24 silly batched        'resolve' => [Object],
+24 silly batched        'sass-loader' => [Object],
+24 silly batched        'semver' => [Object],
+24 silly batched        'style-loader' => [Object],
+24 silly batched        'tapable' => [Object],
+24 silly batched        'terser-webpack-plugin' => [Object],
+24 silly batched        'typescript' => [Object],
+24 silly batched        'url-loader' => [Object],
+24 silly batched        'webpack' => [Object],
+24 silly batched        'webpack-dev-server' => [Object],
+24 silly batched        'webpack-manifest-plugin' => [Object],
+24 silly batched        'workbox-webpack-plugin' => [Object] },
+24 silly batched     localDependencies: Map {},
+24 silly batched     localDependents: Map {} } ]
+25 silly gitAdd [ 'd:\\mycode\\mrs-creater\\packages\\mrs\\package.json' ]
+26 silly gitCommit Publish
+26 silly gitCommit
+26 silly gitCommit  - merrily-react-scripts@1.0.2
+27 verbose git [ 'commit',
+27 verbose git   '-F',
+27 verbose git   'C:\\Users\\liron\\AppData\\Local\\Temp\\9720887b-3de5-4444-a451-9e0b944c6ae9\\lerna-commit.txt' ]
+28 silly gitTag merrily-react-scripts@1.0.2
+29 verbose git [ 'tag',
+29 verbose git   'merrily-react-scripts@1.0.2',
+29 verbose git   '-m',
+29 verbose git   'merrily-react-scripts@1.0.2' ]
+30 info git Pushing tags...
+31 silly gitPush origin master
+32 silly batched [ PackageGraphNode {
+32 silly batched     name: 'merrily-react-scripts',
+32 silly batched     externalDependencies:
+32 silly batched      Map {
+32 silly batched        '@babel/core' => [Object],
+32 silly batched        '@svgr/webpack' => [Object],
+32 silly batched        '@types/jest' => [Object],
+32 silly batched        '@types/node' => [Object],
+32 silly batched        '@types/react' => [Object],
+32 silly batched        '@types/react-dom' => [Object],
+32 silly batched        'async' => [Object],
+32 silly batched        'babel-core' => [Object],
+32 silly batched        'babel-eslint' => [Object],
+32 silly batched        'babel-jest' => [Object],
+32 silly batched        'babel-loader' => [Object],
+32 silly batched        'babel-plugin-named-asset-import' => [Object],
+32 silly batched        'babel-preset-react-app' => [Object],
+32 silly batched        'bfj' => [Object],
+32 silly batched        'case-sensitive-paths-webpack-plugin' => [Object],
+32 silly batched        'chalk' => [Object],
+32 silly batched        'commander' => [Object],
+32 silly batched        'css-loader' => [Object],
+32 silly batched        'dotenv' => [Object],
+32 silly batched        'dotenv-expand' => [Object],
+32 silly batched        'eslint' => [Object],
+32 silly batched        'eslint-config-react-app' => [Object],
+32 silly batched        'eslint-loader' => [Object],
+32 silly batched        'eslint-plugin-flowtype' => [Object],
+32 silly batched        'eslint-plugin-import' => [Object],
+32 silly batched        'eslint-plugin-jsx-a11y' => [Object],
+32 silly batched        'eslint-plugin-react' => [Object],
+32 silly batched        'file-loader' => [Object],
+32 silly batched        'fs-extra' => [Object],
+32 silly batched        'html-webpack-plugin' => [Object],
+32 silly batched        'identity-obj-proxy' => [Object],
+32 silly batched        'jest' => [Object],
+32 silly batched        'jest-pnp-resolver' => [Object],
+32 silly batched        'jest-resolve' => [Object],
+32 silly batched        'jest-watch-typeahead' => [Object],
+32 silly batched        'less' => [Object],
+32 silly batched        'less-loader' => [Object],
+32 silly batched        'mini-css-extract-plugin' => [Object],
+32 silly batched        'node-sass' => [Object],
+32 silly batched        'npm-updater' => [Object],
+32 silly batched        'optimize-css-assets-webpack-plugin' => [Object],
+32 silly batched        'pnp-webpack-plugin' => [Object],
+32 silly batched        'postcss-flexbugs-fixes' => [Object],
+32 silly batched        'postcss-loader' => [Object],
+32 silly batched        'postcss-preset-env' => [Object],
+32 silly batched        'postcss-safe-parser' => [Object],
+32 silly batched        'react' => [Object],
+32 silly batched        'react-app-polyfill' => [Object],
+32 silly batched        'react-dev-utils' => [Object],
+32 silly batched        'react-dom' => [Object],
+32 silly batched        'resolve' => [Object],
+32 silly batched        'sass-loader' => [Object],
+32 silly batched        'semver' => [Object],
+32 silly batched        'style-loader' => [Object],
+32 silly batched        'tapable' => [Object],
+32 silly batched        'terser-webpack-plugin' => [Object],
+32 silly batched        'typescript' => [Object],
+32 silly batched        'url-loader' => [Object],
+32 silly batched        'webpack' => [Object],
+32 silly batched        'webpack-dev-server' => [Object],
+32 silly batched        'webpack-manifest-plugin' => [Object],
+32 silly batched        'workbox-webpack-plugin' => [Object] },
+32 silly batched     localDependencies: Map {},
+32 silly batched     localDependents: Map {} } ]
+33 info publish Publishing packages to npm...
+34 silly verifyNpmPackageAccess
+35 http fetch GET 200 https://registry.npmjs.org/-/org/khan123/package?format=cli 757ms
+36 warn ENOLICENSE Packages merrily-react-scripts are missing a license
+37 silly getCurrentSHA
+38 verbose getCurrentSHA 6c88439d9cbaa3289936c579979dd3c8552bc080
+39 error

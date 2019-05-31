@@ -1,6 +1,6 @@
 {
   "name": "merrily-react-scripts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "bin": {
     "mrs": "./bin/mrs",
     "mrs-start": "./bin/mrs-start",
