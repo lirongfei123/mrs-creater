@@ -27,7 +27,7 @@ module.exports = async function (webpackEnv) {
   }
   return new Promise ((resolve) => {
     async.parallel({
-      ouput: function(callback) {
+      output: function(callback) {
           createConfig.output.callAsync({}, config, (err, result) => {
             callback(null, result);
           });
