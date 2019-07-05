@@ -3,8 +3,11 @@ const {
     HookMap,
     SyncBailHook
 } = require('tapable');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const fs = require('fs');
+const paths = require('../paths');
+const pkg = require(paths.appPackageJson);
 const path = require('path');
 const hooks = {
     rules: new HookMap(() => new AsyncSeriesWaterfallHook(['rules', 'config'])),
@@ -29,7 +32,57 @@ require('./optimization')(hooks.optimization);
 require('./resolve')(hooks.resolve);
 require('./resolveLoader')(hooks.resolveLoader);
 require('./output')(hooks.output);
-
+if (pkg.aliyun === true) {
+    // 针对阿里云自定义的
+    hooks.output.tapAsync('output', (outputConfig, options, callback) => {
+        if (options.isEnvProduction) {
+            if (pkg.component) {
+                callback(null, {
+                    ...outputConfig,
+                    filename: 'bundle.js',
+                    chunkFilename: '[name].chunk.js',
+                });
+            } else {
+                callback(null, {
+                    ...outputConfig,
+                    filename: 'static/js/bundle.js',
+                    chunkFilename: 'static/js/[name].chunk.js',
+                });
+            }
+        } else {
+            callback(null, outputConfig);
+        }
+    });
+    hooks.plugins.for('sw').tapAsync('cssText', (otherPluginConfig, options, callback) => {
+        callback(null, []);
+    });
+    hooks.plugins.for('other').tapAsync('cssText', (otherPluginConfig, options, callback) => {
+        callback(null, otherPluginConfig.map((item) => {
+            if (options.isEnvProduction && item && item.constructor.name &&  item.constructor.name === 'MiniCssExtractPlugin') {
+                if (pkg.component) {
+                    return null;
+                } else {
+                    return new MiniCssExtractPlugin({
+                        filename: 'static/css/[name].css',
+                        chunkFilename: 'static/css/[name].chunk.css',
+                    });
+                }
+            } else {
+                return item;
+            }
+        }));
+    });
+    hooks.optimization.tapAsync('output', (optimizationConfig, options, callback) => {
+        if (options.isEnvProduction) {
+            callback(null, {
+                ...optimizationConfig,
+                splitChunks: false
+            });
+        } else {
+            callback(null, optimizationConfig);
+        }
+    });
+}
 module.exports = hooks;
 // const jsPlugin = require('./rules/javascript');
 // const ruleHooks = new HookMap(() => new AsyncSeriesWaterfallHook(['rules']));
