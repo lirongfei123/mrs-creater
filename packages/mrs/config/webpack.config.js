@@ -2,8 +2,14 @@ const createConfig = require('./create-config/index');
 const async = require('async');
 const paths = require('./paths');
 const fs = require('fs');
+const handleConfig = require('./handleConfig');
 const getClientEnvironment = require('./env');
 module.exports = async function (webpackEnv) {
+  if (fs.existsSync(paths.mrsSetup)) {
+    const mrsSetup = require(paths.mrsSetup);
+    // 处理
+    handleConfig(mrsSetup, createConfig, paths);
+  }
   if (fs.existsSync(paths.configSetup)) {
     require(paths.configSetup)(createConfig);
   }
@@ -49,6 +55,11 @@ module.exports = async function (webpackEnv) {
         },
         externals: function(callback) {
             createConfig.externals.callAsync({}, config, (err, result) => {
+                callback(null, result);
+            })
+        },
+        entry: function(callback) {
+            createConfig.entry.callAsync([paths.appIndexJs], config, (err, result) => {
                 callback(null, result);
             })
         },
@@ -134,7 +145,7 @@ module.exports = async function (webpackEnv) {
             entry: [
                 isEnvDevelopment &&
                 require.resolve('react-dev-utils/webpackHotDevClient'),
-                paths.appIndexJs,
+                ...results.entry
             ].filter(Boolean),
             externals: results.externals,
             output: results.output,
@@ -164,7 +175,7 @@ module.exports = async function (webpackEnv) {
             },
             performance: false,
         };
-      resolve(config);
+        resolve(config);
     });
   });
 }

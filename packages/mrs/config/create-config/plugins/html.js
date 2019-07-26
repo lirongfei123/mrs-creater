@@ -5,7 +5,7 @@ const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 module.exports = function (ruleHooks) {
     ruleHooks.for('html').tapAsync('file', (plugins, config, callback) => {
-        if (pkg.component) {
+        if (pkg.component && config.isEnvProduction) {
             callback(null, plugins);
         } else {
             callback(null, plugins.concat(new HtmlWebpackPlugin(
