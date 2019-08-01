@@ -137,6 +137,7 @@ module.exports = async function (webpackEnv) {
             });
         },
     }, function(err, results) {
+        console.log(results.output);
         const config = {
             mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
             // Stop compilation early in production
