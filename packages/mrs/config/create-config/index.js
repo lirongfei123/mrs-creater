@@ -17,7 +17,6 @@ const hooks = {
     resolveLoader: new AsyncSeriesWaterfallHook(['resolveInitConfig', 'config']),
     optimization: new AsyncSeriesWaterfallHook(['optimizationInitConfig', 'config']),
     externals: new AsyncSeriesWaterfallHook(['externalsConfig', 'config']),
-    entry: new AsyncSeriesWaterfallHook(['entryConfig', 'config']),
 };
 require('./rules/eslint')(hooks.rules);
 require('./rules/javascript')(hooks.rules);

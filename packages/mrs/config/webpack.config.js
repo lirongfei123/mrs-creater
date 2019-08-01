@@ -59,7 +59,10 @@ module.exports = async function (webpackEnv) {
             })
         },
         entry: function(callback) {
-            createConfig.entry.callAsync([paths.appIndexJs], config, (err, result) => {
+            createConfig.entry.callAsync([
+                isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient'),
+                paths.appIndexJs
+            ].filter(Boolean), config, (err, result) => {
                 callback(null, result);
             })
         },
@@ -142,11 +145,7 @@ module.exports = async function (webpackEnv) {
                 ? 'source-map'
                 : false
                 : isEnvDevelopment && 'cheap-module-source-map',
-            entry: [
-                isEnvDevelopment &&
-                require.resolve('react-dev-utils/webpackHotDevClient'),
-                ...results.entry
-            ].filter(Boolean),
+            entry: Array.isArray(results.entry) ? results.entry.filter(Boolean) : results.entry,
             externals: results.externals,
             output: results.output,
             optimization: results.optimization,
